@@ -5,6 +5,7 @@ import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
 import FooterSection from './components/ui/footer';
 import CookieConsentBanner from './components/CookieConsent/CookieConsentBanner';
+import { FixedStarryBackground } from './components/ui/fixed-starry-background';
 import { getCookie } from './utils/cookieUtils';
 import './App.css';
 
@@ -34,6 +35,7 @@ function App() {
     <Router>
       <CookieConsentContext.Provider value={cookieConsent}>
         <div className="App">
+          <FixedStarryBackground />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/impressum" element={<Impressum />} />

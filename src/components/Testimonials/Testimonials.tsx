@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { testimonials } from '../../data/testimonials';
 import { TestimonialCard } from './TestimonialCard';
-import { StarryBackground } from '../ui/starry-background';
 import './Testimonials.css';
 
 export const Testimonials: React.FC = () => {
@@ -68,8 +67,7 @@ export const Testimonials: React.FC = () => {
   }
 
   return (
-    <StarryBackground>
-      <section className="testimonials-section" id="testimonials">
+    <section className="testimonials-section relative z-10" id="testimonials">
         <div className="testimonials-container">
           {/* Section Header */}
           <div className="testimonials-header">
@@ -139,7 +137,6 @@ export const Testimonials: React.FC = () => {
             )}
           </div>
         </div>
-      </section>
-    </StarryBackground>
+    </section>
   );
 };

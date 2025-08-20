@@ -4,7 +4,6 @@ import { videos } from '../../data/videos';
 import { VideoCard } from './VideoCard';
 import { CookieConsentContext } from '../../App'; // Adjust path as needed
 import { setCookie } from '../../utils/cookieUtils';
-import { StarryBackground } from '../ui/starry-background';
 import './VideoShowcase.css';
 
 export const VideoShowcase: React.FC = () => {
@@ -16,8 +15,7 @@ export const VideoShowcase: React.FC = () => {
   };
 
   return (
-    <StarryBackground>
-      <section className="video-showcase" id="portfolio" aria-label="Video Portfolio Showcase">
+    <section className="video-showcase relative z-10" id="portfolio" aria-label="Video Portfolio Showcase">
         <div className="video-showcase-container">
           {/* Section Header */}
           <div className="video-showcase-header">
@@ -56,7 +54,6 @@ export const VideoShowcase: React.FC = () => {
             )}
           </div>
         </div>
-      </section>
-    </StarryBackground>
+    </section>
   );
 };

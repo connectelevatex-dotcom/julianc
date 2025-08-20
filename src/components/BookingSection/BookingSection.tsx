@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import { CookieConsentContext } from '../../App';
 import { setCookie } from '../../utils/cookieUtils';
-import { StarryBackground } from '../ui/starry-background';
 
 export const BookingSection: React.FC = () => {
   const hasCookieConsent = useContext(CookieConsentContext);
@@ -27,8 +26,7 @@ export const BookingSection: React.FC = () => {
   };
 
   return (
-    <StarryBackground>
-      <section className="w-full py-20 bg-black" id="booking">
+    <section className="w-full py-20 bg-black relative z-10" id="booking">
         <div className="max-w-7xl mx-auto px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -63,7 +61,6 @@ export const BookingSection: React.FC = () => {
             )}
           </div>
         </div>
-      </section>
-    </StarryBackground>
+    </section>
   );
 };

@@ -1,19 +1,11 @@
 import React from 'react';
 import { ShootingStars } from './shooting-stars';
 
-interface StarryBackgroundProps {
-  children?: React.ReactNode;
-  className?: string;
-}
-
-export const StarryBackground: React.FC<StarryBackgroundProps> = ({ 
-  children, 
-  className = "" 
-}) => {
+export const FixedStarryBackground: React.FC = () => {
   return (
-    <div className={`relative ${className}`}>
+    <div className="fixed inset-0 pointer-events-none z-0">
       {/* Static twinkling stars background */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0">
         <div className="stars absolute inset-0 opacity-60" />
       </div>
 
@@ -45,9 +37,6 @@ export const StarryBackground: React.FC<StarryBackgroundProps> = ({
         maxDelay={4000}
         className="opacity-40"
       />
-
-      {/* Content */}
-      {children}
 
       <style jsx>{`
         .stars {

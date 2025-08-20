@@ -1,13 +1,11 @@
 import React from 'react';
 import { Play } from 'lucide-react';
 import { ClientShowcase } from '../ClientShowcase/ClientShowcase';
-import { StarryBackground } from '../ui/starry-background';
 import './Hero.css';
 
 export const Hero: React.FC = () => {
   return (
-    <StarryBackground>
-      <section className="hero" id="home">
+    <section className="hero relative z-10" id="home">
         <div className="hero-container">
           <div className="hero-content">
             <div className="hero-text">
@@ -38,7 +36,6 @@ export const Hero: React.FC = () => {
           
           <ClientShowcase />
         </div>
-      </section>
-    </StarryBackground>
+    </section>
   );
 };

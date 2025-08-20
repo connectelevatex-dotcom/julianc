@@ -1,12 +1,10 @@
 import React from 'react';
 import { GlowCard } from '../ui/spotlight-card';
 import { whyChooseMeFeatures } from '../../data/whyChooseMe';
-import { StarryBackground } from '../ui/starry-background';
 
 export const WhyChooseMe: React.FC = () => {
   return (
-    <StarryBackground>
-      <section className="w-full py-20 bg-black relative overflow-hidden" id="why-choose-me">
+    <section className="w-full py-20 bg-black relative overflow-hidden z-10" id="why-choose-me">
         <div className="max-w-7xl mx-auto px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -71,7 +69,6 @@ export const WhyChooseMe: React.FC = () => {
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
           </div>
         </div>
-      </section>
-    </StarryBackground>
+    </section>
   );
 };

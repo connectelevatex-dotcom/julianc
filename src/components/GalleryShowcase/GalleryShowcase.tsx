@@ -1,15 +1,13 @@
 import React from 'react';
 import { galleryImages } from '../../data/gallery';
 import { GalleryCard } from './GalleryCard';
-import { StarryBackground } from '../ui/starry-background';
 import './GalleryShowcase.css';
 
 export const GalleryShowcase: React.FC = () => {
   const duplicatedImages = [...galleryImages, ...galleryImages]; // Duplicate for infinite scroll
 
   return (
-    <StarryBackground>
-      <section className="gallery-showcase" aria-label="Our work gallery showcase">
+    <section className="gallery-showcase relative z-10" aria-label="Our work gallery showcase">
         <div className="gallery-showcase-container">
           <h2 className="gallery-showcase-title">
             Behind the Scenes
@@ -30,7 +28,6 @@ export const GalleryShowcase: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-    </StarryBackground>
+    </section>
   );
 };
