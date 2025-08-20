@@ -14,7 +14,7 @@ export const BookingSection: React.FC = () => {
 
       return () => {
         if (document.body.contains(script)) {
-          document.body.removeChild(script);
+          document.body.removeChild(script)
         }
       };
     }
