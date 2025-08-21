@@ -5,7 +5,7 @@ import './Hero.css';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="hero relative z-10" id="home">
+    <section className="hero relative z-10 bg-transparent" id="home">
         <div className="hero-container">
           <div className="hero-content">
             <div className="hero-text">

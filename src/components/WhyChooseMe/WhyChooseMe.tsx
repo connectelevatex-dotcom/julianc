@@ -4,7 +4,7 @@ import { whyChooseMeFeatures } from '../../data/whyChooseMe';
 
 export const WhyChooseMe: React.FC = () => {
   return (
-    <section className="w-full py-20 relative overflow-hidden z-10" id="why-choose-me">
+    <section className="w-full py-20 relative overflow-hidden z-10 bg-transparent" id="why-choose-me">
         <div className="max-w-7xl mx-auto px-8">
           {/* Section Header */}
           <div className="text-center mb-16">

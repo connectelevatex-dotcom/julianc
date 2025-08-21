@@ -16,11 +16,13 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #000000;
 }
 
 .App {
   min-height: 100vh;
   overflow-x: hidden;
+  background: #000000;
 }
 
 /* Global Button Reset */

@@ -15,7 +15,7 @@ export const VideoShowcase: React.FC = () => {
   };
 
   return (
-    <section className="video-showcase relative z-10" id="portfolio" aria-label="Video Portfolio Showcase">
+    <section className="video-showcase relative z-10 bg-transparent" id="portfolio" aria-label="Video Portfolio Showcase">
         <div className="video-showcase-container">
           {/* Section Header */}
           <div className="video-showcase-header">

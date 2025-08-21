@@ -7,7 +7,7 @@ export const GalleryShowcase: React.FC = () => {
   const duplicatedImages = [...galleryImages, ...galleryImages]; // Duplicate for infinite scroll
 
   return (
-    <section className="gallery-showcase relative z-10" aria-label="Our work gallery showcase">
+    <section className="gallery-showcase relative z-10 bg-transparent" aria-label="Our work gallery showcase">
         <div className="gallery-showcase-container">
           <h2 className="gallery-showcase-title">
             Behind the Scenes

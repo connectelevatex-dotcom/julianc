@@ -67,7 +67,7 @@ export const Testimonials: React.FC = () => {
   }
 
   return (
-    <section className="testimonials-section relative z-10" id="testimonials">
+    <section className="testimonials-section relative z-10 bg-transparent" id="testimonials">
         <div className="testimonials-container">
           {/* Section Header */}
           <div className="testimonials-header">
