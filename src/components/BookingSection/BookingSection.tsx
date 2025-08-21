@@ -26,7 +26,7 @@ export const BookingSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full py-20 bg-black relative z-10" id="booking">
+    <section className="w-full py-20 relative z-10" id="booking">
         <div className="max-w-7xl mx-auto px-8">
           {/* Section Header */}
           <div className="text-center mb-16">

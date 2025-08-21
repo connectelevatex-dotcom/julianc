@@ -4,7 +4,7 @@ import aboutMeImage from './julian.png'; // Updated path
 
 const AboutMe: React.FC = () => {
   return (
-    <section className="about-me-section bg-black text-white py-16 md:py-24 relative z-10" id="about">
+    <section className="about-me-section text-white py-16 md:py-24 relative z-10" id="about">
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-2 px-4">
           {/* Left Section: Image */}
           <div className="w-full md:w-1/2 flex justify-center">
