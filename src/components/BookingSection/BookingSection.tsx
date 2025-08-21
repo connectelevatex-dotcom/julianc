@@ -22,7 +22,7 @@ export const BookingSection: React.FC = () => {
 
   const handleAcceptCookies = () => {
     setCookie('cookie_consent', 'accepted', 365);
-    window.location.reload(); // Reload to apply changes
+    window.location.reload(); // Reload to apply change
   };
 
   return (
