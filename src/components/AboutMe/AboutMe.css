@@ -2,3 +2,21 @@
 .about-me-section {
   /* Tailwind handles most styles, but you can add custom ones here if needed */
 }
+
+/* Text shadow for better readability */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .about-me-section {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me-section {
+    padding: 2.5rem 0;
+  }
+}

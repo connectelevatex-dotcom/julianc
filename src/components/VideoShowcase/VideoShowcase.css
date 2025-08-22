@@ -109,7 +109,7 @@
   }
   
   .video-frame {
-    height: 220px;
+    height: 250px;
   }
   
   .video-showcase-header {
@@ -128,10 +128,29 @@
     padding: 60px 0;
   }
   
+  .video-showcase-container {
+    padding: 0 16px;
+  }
+  
   .video-grid {
     gap: 16px;
   }
 
+  .video-frame {
+    height: 220px;
+  }
+  
+  .video-showcase-header {
+    margin-bottom: 32px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 320px) {
+  .video-showcase-container {
+    padding: 0 12px;
+  }
+  
   .video-frame {
     height: 200px;
   }
