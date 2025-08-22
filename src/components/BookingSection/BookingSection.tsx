@@ -39,9 +39,9 @@ export const BookingSection: React.FC = () => {
           </div>
 
           {/* Calendly Widget Container */}
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto calendly-container">
             {hasCookieConsent ? (
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-2 sm:p-4 lg:p-6 border border-white/10 calendly-wrapper">
                 {/* Desktop Calendly Widget */}
                 <div 
                   className="calendly-inline-widget" 
@@ -49,7 +49,9 @@ export const BookingSection: React.FC = () => {
                   style={{ 
                     minWidth: '100%', 
                     width: '100%',
-                    height: '700px'
+                    height: '700px',
+                    borderRadius: '12px',
+                    overflow: 'hidden'
                   }}
                 />
               </div>
@@ -67,26 +69,99 @@ export const BookingSection: React.FC = () => {
           </div>
         </div>
         
-        {/* Mobile-specific Calendly styles */}
+        {/* Responsive Calendly styles */}
         <style jsx>{`
+          /* Desktop styles (default) */
+          .calendly-container {
+            width: 100%;
+            max-width: 1024px;
+          }
+          
+          .calendly-wrapper {
+            position: relative;
+            overflow: hidden;
+          }
+          
+          .calendly-inline-widget {
+            border-radius: 12px !important;
+            overflow: hidden !important;
+          }
+          
+          /* Tablet styles */
+          @media (max-width: 1024px) {
+            .calendly-inline-widget {
+              height: 650px !important;
+              min-height: 650px !important;
+            }
+          }
+          
+          /* Mobile landscape and small tablets */
           @media (max-width: 768px) {
+            .calendly-container {
+              padding: 0 8px;
+            }
+            
+            .calendly-wrapper {
+              padding: 8px !important;
+              border-radius: 16px;
+            }
+            
             .calendly-inline-widget {
               height: 600px !important;
               min-height: 600px !important;
+              border-radius: 8px !important;
             }
           }
           
+          /* Mobile portrait */
           @media (max-width: 480px) {
+            .calendly-container {
+              padding: 0 4px;
+            }
+            
+            .calendly-wrapper {
+              padding: 4px !important;
+              border-radius: 12px;
+            }
+            
+            .calendly-inline-widget {
+              height: 550px !important;
+              min-height: 550px !important;
+              border-radius: 6px !important;
+            }
+          }
+          
+          /* Extra small mobile devices */
+          @media (max-width: 320px) {
+            .calendly-container {
+              padding: 0 2px;
+            }
+            
+            .calendly-wrapper {
+              padding: 2px !important;
+              border-radius: 8px;
+            }
+            
             .calendly-inline-widget {
               height: 500px !important;
               min-height: 500px !important;
+              border-radius: 4px !important;
             }
           }
           
-          @media (max-width: 320px) {
+          /* Ensure Calendly content is responsive */
+          @media (max-width: 768px) {
+            .calendly-inline-widget iframe {
+              width: 100% !important;
+              height: 100% !important;
+            }
+          }
+          
+          /* Fix for touch devices */
+          @media (hover: none) and (pointer: coarse) {
             .calendly-inline-widget {
-              height: 450px !important;
-              min-height: 450px !important;
+              -webkit-overflow-scrolling: touch;
+              overflow-y: auto;
             }
           }
         `}</style>

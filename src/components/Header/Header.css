@@ -28,9 +28,35 @@
   .header {
     top: 10px;
     width: calc(100% - 20px);
+    z-index: 1001;
   }
   
   .header-container {
     border-radius: 20px;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(65, 185, 255, 0.2);
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    top: 8px;
+    width: calc(100% - 16px);
+  }
+  
+  .header-container {
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    top: 6px;
+    width: calc(100% - 12px);
+  }
+  
+  .header-container {
+    border-radius: 14px;
   }
 }

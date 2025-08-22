@@ -23,6 +23,7 @@
   color: #ffffff;
   margin: 0;
   letter-spacing: -0.02em;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 /* Grid Styles */
@@ -109,7 +110,7 @@
   }
   
   .video-frame {
-    height: 250px;
+    height: 280px;
   }
   
   .video-showcase-header {
@@ -120,6 +121,11 @@
     flex-direction: column;
     text-align: center;
     gap: 16px;
+  }
+  
+  .video-showcase-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
   }
 }
 
@@ -137,11 +143,15 @@
   }
 
   .video-frame {
-    height: 220px;
+    height: 240px;
   }
   
   .video-showcase-header {
     margin-bottom: 32px;
+  }
+  
+  .video-showcase-title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
   }
 }
 
@@ -152,7 +162,11 @@
   }
   
   .video-frame {
-    height: 200px;
+    height: 220px;
+  }
+  
+  .video-showcase-title {
+    font-size: clamp(1.4rem, 8vw, 2rem);
   }
 }
 
