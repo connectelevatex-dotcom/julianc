@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { testimonials } from '../../data/testimonials';
 import { TestimonialCard } from './TestimonialCard';
+import { AnimatedSection } from '../ui/animated-section';
 import './Testimonials.css';
 
 export const Testimonials: React.FC = () => {
@@ -70,72 +71,76 @@ export const Testimonials: React.FC = () => {
     <section className="testimonials-section relative z-10 bg-transparent" id="testimonials">
         <div className="testimonials-container">
           {/* Section Header */}
-          <div className="testimonials-header">
-            <h2 className="testimonials-title">Client Testimonials</h2>
-            <p className="testimonials-subtitle">
-              Hear what our clients say about our video editing services
-            </p>
-          </div>
+          <AnimatedSection animationType="fadeUp" duration={0.8}>
+            <div className="testimonials-header">
+              <h2 className="testimonials-title">Client Testimonials</h2>
+              <p className="testimonials-subtitle">
+                Hear what our clients say about our video editing services
+              </p>
+            </div>
+          </AnimatedSection>
 
           {/* Testimonials Content */}
-          <div className="testimonials-content">
-            {/* Navigation Arrows - Show only when needed */}
-            {showNavigation && (
-              <>
-                <button
-                  className="nav-arrow nav-arrow-left"
-                  onClick={prevSlide}
-                  disabled={!isMobile && currentIndex === 0}
-                  aria-label="Previous testimonials"
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                
-                <button
-                  className="nav-arrow nav-arrow-right"
-                  onClick={nextSlide}
-                  disabled={!isMobile && currentIndex >= testimonialsCount - maxVisibleDesktop}
-                  aria-label="Next testimonials"
-                >
-                  <ChevronRight size={24} />
-                </button>
-              </>
-            )}
-
-            {/* Testimonials Grid/Carousel */}
-            <div className="testimonials-wrapper">
-              <div 
-                className={`testimonials-grid ${isMobile ? 'mobile-carousel' : ''}`}
-                style={{
-                  gridTemplateColumns: isMobile 
-                    ? '1fr' 
-                    : `repeat(${Math.min(testimonialsCount, 3)}, 1fr)`
-                }}
-              >
-                {getVisibleTestimonials().map((testimonial, index) => (
-                  <TestimonialCard
-                    key={testimonial.id}
-                    testimonial={testimonial}
-                    index={index}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Dots Navigation - Show only when needed */}
-            {showNavigation && (
-              <div className="dots-container">
-                {Array.from({ length: getDotCount() }).map((_, index) => (
+          <AnimatedSection animationType="scaleIn" delay={0.2} duration={1.0}>
+            <div className="testimonials-content">
+              {/* Navigation Arrows - Show only when needed */}
+              {showNavigation && (
+                <>
                   <button
-                    key={index}
-                    className={`dot ${index === currentIndex ? 'active' : ''}`}
-                    onClick={() => goToSlide(index)}
-                    aria-label={`Go to testimonial ${index + 1}`}
-                  />
-                ))}
+                    className="nav-arrow nav-arrow-left"
+                    onClick={prevSlide}
+                    disabled={!isMobile && currentIndex === 0}
+                    aria-label="Previous testimonials"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                  
+                  <button
+                    className="nav-arrow nav-arrow-right"
+                    onClick={nextSlide}
+                    disabled={!isMobile && currentIndex >= testimonialsCount - maxVisibleDesktop}
+                    aria-label="Next testimonials"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+                </>
+              )}
+
+              {/* Testimonials Grid/Carousel */}
+              <div className="testimonials-wrapper">
+                <div 
+                  className={`testimonials-grid ${isMobile ? 'mobile-carousel' : ''}`}
+                  style={{
+                    gridTemplateColumns: isMobile 
+                      ? '1fr' 
+                      : `repeat(${Math.min(testimonialsCount, 3)}, 1fr)`
+                  }}
+                >
+                  {getVisibleTestimonials().map((testimonial, index) => (
+                    <TestimonialCard
+                      key={testimonial.id}
+                      testimonial={testimonial}
+                      index={index}
+                    />
+                  ))}
+                </div>
               </div>
-            )}
-          </div>
+
+              {/* Dots Navigation - Show only when needed */}
+              {showNavigation && (
+                <div className="dots-container">
+                  {Array.from({ length: getDotCount() }).map((_, index) => (
+                    <button
+                      key={index}
+                      className={`dot ${index === currentIndex ? 'active' : ''}`}
+                      onClick={() => goToSlide(index)}
+                      aria-label={`Go to testimonial ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </AnimatedSection>
         </div>
     </section>
   );
