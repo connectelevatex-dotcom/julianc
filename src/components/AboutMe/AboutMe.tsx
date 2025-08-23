@@ -16,7 +16,7 @@ const AboutMe: React.FC = () => {
                 className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] xl:w-[500px] xl:h-[500px] rounded-full object-cover shadow-2xl border-4 border-gray-600 transform transition-transform duration-300 hover:scale-105"
               />
             </div>
-          </AnimatedSection>
+          </AnimatedSection
 
           {/* Right Section: Text Content */}
           <div className="w-full lg:w-1/2 text-center lg:text-left px-4 sm:px-0">
