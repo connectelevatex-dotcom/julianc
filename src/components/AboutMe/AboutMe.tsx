@@ -38,8 +38,6 @@ const AboutMe: React.FC = () => {
           </div>
         </div>
     </section>
-  )
-  )
   );
 };
 
