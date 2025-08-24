@@ -101,32 +101,4 @@ a {
   html {
     scroll-behavior: auto;
   }
-  
-  /* Disable all custom animations for users who prefer reduced motion */
-  .hero-initial-animation {
-    animation: none !important;
-  }
-  
-  [class*="animate-"] {
-    animation: none !important;
-  }
-  
-  [class*="transition-"] {
-    transition: none !important;
-  }
-}
-
-/* Smooth scrolling enhancement */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Performance optimization for animations */
-* {
-  will-change: auto;
-}
-
-.hero-initial-animation,
-[class*="animate-"] {
-  will-change: transform, opacity;
 }
