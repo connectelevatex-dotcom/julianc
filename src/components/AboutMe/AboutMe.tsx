@@ -17,6 +17,7 @@ const AboutMe: React.FC = () => {
               />
             </div>
           </AnimatedSection
+          </AnimatedSection>
 
           {/* Right Section: Text Content */}
           <div className="w-full lg:w-1/2 text-center lg:text-left px-4 sm:px-0">
