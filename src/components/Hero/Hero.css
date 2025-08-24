@@ -58,6 +58,30 @@
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
+/* Animation Container Styles */
+.hero-badge-container,
+.hero-title-container,
+.hero-description-container,
+.hero-actions-container,
+.client-showcase-container {
+  width: 100%;
+}
+
+.hero-title-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-description-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-actions-container {
+  display: flex;
+  justify-content: center;
+}
+
 /* Hero Title */
 .hero-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

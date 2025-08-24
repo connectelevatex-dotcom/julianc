@@ -1,48 +1,75 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 interface UseScrollAnimationOptions {
   threshold?: number;
   rootMargin?: string;
   triggerOnce?: boolean;
+  disabled?: boolean;
 }
 
-export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
+interface UseScrollAnimationReturn {
+  elementRef: React.RefObject<HTMLElement>;
+  isVisible: boolean;
+  hasTriggered: boolean;
+}
+
+export const useScrollAnimation = (
+  options: UseScrollAnimationOptions = {}
+): UseScrollAnimationReturn => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(false);
   const elementRef = useRef<HTMLElement>(null);
 
   const {
     threshold = 0.1,
     rootMargin = '0px 0px -50px 0px',
-    triggerOnce = true
+    triggerOnce = true,
+    disabled = false
   } = options;
+
+  const handleIntersection = useCallback(
+    (entries: IntersectionObserverEntry[]) => {
+      const [entry] = entries;
+      
+      if (entry.isIntersecting && !hasTriggered) {
+        setIsVisible(true);
+        setHasTriggered(true);
+      } else if (!triggerOnce && !entry.isIntersecting) {
+        setIsVisible(false);
+      }
+    },
+    [hasTriggered, triggerOnce]
+  );
 
   useEffect(() => {
     const element = elementRef.current;
-    if (!element) return;
+    
+    // Early return if disabled or no element
+    if (disabled || !element) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          if (triggerOnce) {
-            observer.unobserve(element);
-          }
-        } else if (!triggerOnce) {
-          setIsVisible(false);
-        }
-      },
-      {
-        threshold,
-        rootMargin,
-      }
-    );
+    // Check if IntersectionObserver is supported
+    if (!window.IntersectionObserver) {
+      // Fallback for older browsers
+      setIsVisible(true);
+      setHasTriggered(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold,
+      rootMargin,
+    });
 
     observer.observe(element);
 
+    // Cleanup function
     return () => {
-      observer.unobserve(element);
+      if (element) {
+        observer.unobserve(element);
+      }
+      observer.disconnect();
     };
-  }, [threshold, rootMargin, triggerOnce]);
+  }, [threshold, rootMargin, handleIntersection, disabled]);
 
-  return { elementRef, isVisible };
+  return { elementRef, isVisible, hasTriggered };
 };
