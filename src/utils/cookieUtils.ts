@@ -5,6 +5,8 @@ export const setCookie = (name: string, value: string, days: number) => {
 };
 
 export const getCookie = (name: string): string | null => {
+  if (typeof document === 'undefined') return null;
+  
   const nameEQ = name + '=';
   const ca = document.cookie.split(';');
   for (let i = 0; i < ca.length; i++) {
@@ -13,4 +15,21 @@ export const getCookie = (name: string): string | null => {
     if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
   }
   return null;
+};
+
+export const deleteCookie = (name: string) => {
+  if (typeof document === 'undefined') return;
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+};
+
+export const getCookieSettings = () => {
+  const settings = getCookie('cookie_settings');
+  if (settings) {
+    try {
+      return JSON.parse(settings);
+    } catch {
+      return { necessary: true, functional: false, analytics: false };
+    }
+  }
+  return { necessary: true, functional: false, analytics: false };
 };
