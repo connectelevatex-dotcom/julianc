@@ -99,7 +99,7 @@ const Datenschutz: React.FC = () => {
             <p>Für Online-Terminbuchungen nutzen wir Calendly (Calendly LLC, 271 17th St NW, Atlanta, GA 30363, USA).</p>
             <p><strong>Verarbeitete Daten:</strong> IP-Adresse, Browserdaten, eingegebene Termindetails</p>
             <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</p>
-            <p><strong>Datenschutzerklärung:</strong> <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">https://calendly.com/privacy</a></p>
+            <p><strong>Datenschutzerklärung:</strong> <a href="https://calendly.com/privacy" target=\"_blank" rel="noopener noreferrer\" className="text-blue-400 hover:text-blue-300 underline">https://calendly.com/privacy</a></p>
           </div>
           
           <div>
@@ -107,7 +107,7 @@ const Datenschutz: React.FC = () => {
             <p>Wir betten Videos von Google Drive ein (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland).</p>
             <p><strong>Verarbeitete Daten:</strong> IP-Adresse, Gerätedaten, Nutzungsstatistiken</p>
             <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</p>
-            <p><strong>Datenschutzerklärung:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">https://policies.google.com/privacy</a></p>
+            <p><strong>Datenschutzerklärung:</strong> <a href="https://policies.google.com/privacy" target=\"_blank" rel="noopener noreferrer\" className="text-blue-400 hover:text-blue-300 underline">https://policies.google.com/privacy</a></p>
           </div>
           
           <div>
